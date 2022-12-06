@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">CVBuilderApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="career_note_1"><![CDATA[
+        Expert-level <b>software developer</b> with more than 10 years of history leading the planning and development of large-scale software solutions through the complete SDLC using modern methodologies, coding standards, and design patterns. Proven ability to oversee the creation and delivery of critical front end, back end, database, middleware, and service components, as well as integration into a finished product which meets all project specifications and business needs.
+Strong understanding of a variety of languages and tools such as Java, Spring, Hibernate, AWS, React, PostgreSQL, MongoDB, ActiveMQ, Kafka, Hadoop, and Big Data technologies.
+        ]]></string>
+    <string name="core_competency_1"><![CDATA[
+<b>Languages:</b> Java<br/>
+<b>Web:</b> JavaScript, HTML5, CSS3, Bootstrap, jQuery, JSP<br/>
+<b>Web Services:</b> REST, SOAP<br/>
+<b>Web/App Servers:</b> Tomcat, JBoss, Nginx<br/>
+<b>Frameworks:</b> Spring (Boot, MVC, Security), React, Hibernate, Spock, Selenium, JSF, Mockito Databases: PostgreSQL, MS SQL, Oracle, MongoDB<br/>
+<b>Design Patterns:</b> Factory, Abstract Factory, Singleton, Strategy, Observer, Command, Template, Iterator, Visitor, State, Decorator, Proxy, Composite, Adapter<br/>
+<b>SDLC:</b> Scrum, Agile Lean<br/>
+<b>Tools:</b> Maven, Jenkins, IntelliJ, Postman, Docker, Kubernetes, Kafka, ActiveMQ, JUnit, JIRA, Git, SVN, StarUML<br/>
+<b>Platforms:</b> Linux, Windows, Mac OS<br/>
+<b>Big Data:</b> Hadoop, Pig, Hive, Sqoop, Flume, HBase, Spark<br/>
+        ]]>
+    </string>
 </resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/linkedInMenu"
+        android:title="LinkedIn"
+        android:icon="@drawable/linkedin_icon"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/githubMenu"
+        android:title="Github"
+        android:icon="@drawable/github_icon"
+        app:showAsAction="always"/>
+</menu>

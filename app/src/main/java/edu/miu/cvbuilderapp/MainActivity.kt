@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
         val sharedPF = getSharedPreferences("login", MODE_PRIVATE)
         val credentialsJson = sharedPF.getString("credentials", "")
         if(credentialsJson!!.isBlank()) {
-            users.putIfAbsent("kevin.lee@gmail.com",User("Kevin", "Lee", "kevin.lee@gmail.com", "123456"))
+//            users.putIfAbsent("kevin.lee@gmail.com",User("Kevin", "Lee", "kevin.lee@gmail.com", "123456"))
+            users.putIfAbsent("1",User("Kevin", "Lee", "1", "1"))
             val sharedPFEdit = sharedPF.edit()
             sharedPFEdit.putString("credentials",Gson().toJson(users))
             sharedPFEdit.apply()
@@ -44,7 +45,8 @@ class MainActivity : AppCompatActivity() {
         if(curriculumJson!!.isBlank()){
             val curriculums = HashMap<String,Curriculum>()
             curriculums.putIfAbsent("kevin.lee@gmail.com",
-                Curriculum("<b>kevin</b>lee","aaa"))
+                Curriculum(getString(R.string.career_note_1),getString(R.string.core_competency_1)))
+
             val curJson = Gson().toJson(curriculums)
             val spfe = curriculumSpf.edit()
             spfe.putString("curriculums",curJson)
