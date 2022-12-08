@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">CVBuilderApp</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="career_note_1"><![CDATA[
         Expert-level <b>software developer</b> with more than 10 years of history leading the planning and development of large-scale software solutions through the complete SDLC using modern methodologies, coding standards, and design patterns. Proven ability to oversee the creation and delivery of critical front end, back end, database, middleware, and service components, as well as integration into a finished product which meets all project specifications and business needs.
 Strong understanding of a variety of languages and tools such as Java, Spring, Hibernate, AWS, React, PostgreSQL, MongoDB, ActiveMQ, Kafka, Hadoop, and Big Data technologies.
@@ -19,4 +18,10 @@ Strong understanding of a variety of languages and tools such as Java, Spring, H
 <b>Big Data:</b> Hadoop, Pig, Hive, Sqoop, Flume, HBase, Spark<br/>
         ]]>
     </string>
+    <string-array name="company_locations">
+        <item>TX, USA</item>
+        <item>CA, USA</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -13,7 +13,7 @@ class MainPageAdapter(fragmentActivity:FragmentActivity, private val curriculum:
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> HomeFragment(curriculum)
-            1 -> AboutMeFragment()
+            1 -> AboutMeFragment(curriculum)
             2 -> WorkFragment()
             3 -> ContactFragment()
             else -> Fragment()

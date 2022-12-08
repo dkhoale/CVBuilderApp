@@ -5,10 +5,28 @@
     android:layout_height="match_parent"
     tools:context=".AboutMeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="About me..." />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="edu.miu.cvbuilderapp.SimpleContentFragment"
+                android:id="@+id/aboutMe_fm"/>
+
+            <androidx.fragment.app.FragmentContainerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="edu.miu.cvbuilderapp.EducationListFragment"
+                android:id="@+id/education_list_fm"/>
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

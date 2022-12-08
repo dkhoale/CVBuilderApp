@@ -45,7 +45,10 @@ class MainActivity : AppCompatActivity() {
         if(curriculumJson!!.isBlank()){
             val curriculums = HashMap<String,Curriculum>()
             curriculums.putIfAbsent("kevin.lee@gmail.com",
-                Curriculum(getString(R.string.career_note_1),getString(R.string.core_competency_1)))
+                Curriculum(getString(R.string.career_note_1),getString(R.string.core_competency_1),"AAAA",
+                    arrayListOf(), arrayListOf(), arrayListOf(), arrayListOf()
+                )
+            )
 
             val curJson = Gson().toJson(curriculums)
             val spfe = curriculumSpf.edit()

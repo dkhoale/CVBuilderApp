@@ -20,7 +20,8 @@ class CVBuilderActivity : AppCompatActivity() {
         binding = ActivityCvbuilderBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var curriculum : Curriculum = Curriculum("","")
+        var curriculum : Curriculum = Curriculum("","","AAAAAAA", arrayListOf(), arrayListOf(),
+            arrayListOf(), arrayListOf())
         val spf = getSharedPreferences("curriculums", MODE_PRIVATE)
         val curriculumJson = spf.getString("curriculums","")
         if(curriculumJson!!.isNotBlank()) {
@@ -30,12 +31,8 @@ class CVBuilderActivity : AppCompatActivity() {
 
 
         val myPageAdapter = MainPageAdapter(this,curriculum)
-        // Set the Adapter to your Viewpager UI
         binding.vpager.adapter = myPageAdapter
-        // Will align the space according to the Screen size to equally spread
         binding.tlayout.tabGravity = TabLayout.GRAVITY_FILL
-        /* Setting up Tab Layout with the ViewPageg2 is handled by the TabLayoutMediator
-       * by passing your tablayout id and viewpager id*/
         TabLayoutMediator(binding.tlayout,binding.vpager){tab,position->
             when(position){
                 0->{
