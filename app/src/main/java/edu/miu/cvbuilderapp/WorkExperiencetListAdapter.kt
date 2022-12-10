@@ -23,6 +23,7 @@ class WorkExperiencetListAdapter(val context: Context, private val workExps: Arr
         holder.binding.workExpItemTvCompany.text = workExps[position].company.name
         holder.binding.workExpItemTvPeriod.text = workExps[position].from.format(
             DateTimeFormatter.ofPattern("MMM yyyy"))
+        holder.binding.workExpItemTvLocation.text = workExps[position].location
         holder.binding.workExpItemTvDescription.text = workExps[position].description
 
     }

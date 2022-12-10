@@ -1,4 +1,4 @@
-package edu.miu.cvbuilderapp
+package edu.miu.cvbuilderapp.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

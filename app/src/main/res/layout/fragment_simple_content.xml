@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <androidx.cardview.widget.CardView
-        app:cardBackgroundColor="@android:color/background_light"
+        app:cardBackgroundColor="@android:color/white"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="4dp"
         app:cardElevation="5dp"
@@ -27,13 +27,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:textSize="@dimen/text_title"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
             android:id="@+id/sf_title_tv"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:textSize="14sp"
+            android:textAppearance="@style/CardView.Light"
             android:id="@+id/sf_content_tv"/>
     </LinearLayout>
     </androidx.cardview.widget.CardView>

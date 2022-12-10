@@ -8,13 +8,13 @@
 
     <ImageView
         android:id="@+id/iv_logo"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="416dp"
+        android:layout_height="114dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/walmart_logo" />
+        app:srcCompat="@drawable/main_app_logo" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -23,7 +23,7 @@
         android:layout_marginTop="16dp"
         android:text="Sign in to your account"
         android:fontFamily="sans-serif-thin"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_title"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="56dp"
         android:text="Email address (required)"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_paragraph"
         />
 
     <EditText
@@ -84,18 +84,6 @@
         />
 
 
-    <TextView
-        android:id="@+id/tv_forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginRight="30dp"
-        android:autoLink="all"
-        android:clickable="true"
-        android:focusable="true"
-        android:padding="5dp"
-        android:text="Forgot password?" />
-
     <Space
         android:layout_width="match_parent"
         android:layout_height="104dp"
@@ -110,49 +98,7 @@
         android:text="Sign in"
         />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
 
-        <View android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="8dp"
-            android:layout_toStartOf="@id/tv_no_acc"
-            android:background="@android:color/black"/>
-
-        <TextView android:id="@+id/tv_no_acc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Don't have any account?"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
-        <View android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="20dp"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/tv_no_acc"
-            android:background="@android:color/black"/>
-    </RelativeLayout>
-
-    <Button
-        android:id="@+id/btn_create_new_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/white"
-        android:text="Create a new account"
-        android:textAllCaps="false"
-        android:textColor="@color/walmart_color"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,35 +2,38 @@ package edu.miu.cvbuilderapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Html
 import android.view.Menu
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
+import edu.miu.cvbuilderapp.adapter.LocalDateAdapter
+import edu.miu.cvbuilderapp.adapter.MainPageAdapter
 import edu.miu.cvbuilderapp.databinding.ActivityCvbuilderBinding
-import edu.miu.cvbuilderapp.databinding.ActivityMainBinding
 import edu.miu.cvbuilderapp.model.Curriculum
+import java.time.LocalDate
 
 class CVBuilderActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCvbuilderBinding
+    private var curriculum = Curriculum("","",
+        "", arrayListOf(), arrayListOf(), arrayListOf(), arrayListOf())
+    private lateinit var currentLogin: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityCvbuilderBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        currentLogin = intent.getStringExtra("currentLogin").toString()
 
-        var curriculum : Curriculum = Curriculum("","","AAAAAAA", arrayListOf(), arrayListOf(),
-            arrayListOf(), arrayListOf())
         val spf = getSharedPreferences("curriculums", MODE_PRIVATE)
         val curriculumJson = spf.getString("curriculums","")
         if(curriculumJson!!.isNotBlank()) {
-            curriculum = Gson().fromJson<HashMap<String, Curriculum>>(
-                curriculumJson).values.first()
+            curriculum = fromJson<HashMap<String, Curriculum>>(
+                curriculumJson)[currentLogin]!!
         }
 
-
-        val myPageAdapter = MainPageAdapter(this,curriculum)
+        val myPageAdapter = MainPageAdapter(this,curriculum, currentLogin)
         binding.vpager.adapter = myPageAdapter
         binding.tlayout.tabGravity = TabLayout.GRAVITY_FILL
         TabLayoutMediator(binding.tlayout,binding.vpager){tab,position->
@@ -61,5 +64,5 @@ class CVBuilderActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    inline fun <reified T> Gson.fromJson(json: String) = fromJson<T>(json, object: TypeToken<T>() {}.type)
+    inline fun <reified T> fromJson(json: String) = GsonBuilder().registerTypeAdapter(LocalDate::class.java, LocalDateAdapter()).create().fromJson<T>(json, object: TypeToken<T>() {}.type)
 }

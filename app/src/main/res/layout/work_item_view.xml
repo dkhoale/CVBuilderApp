@@ -12,7 +12,8 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/work_exp_item_imageView"
@@ -35,8 +36,6 @@
         android:layout_marginTop="8dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toEndOf="@+id/work_exp_item_imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,11 +43,9 @@
         android:id="@+id/work_exp_item_tvCompany"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="3dp"
         android:text="Color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/work_exp_item_imageView"
         app:layout_constraintTop_toBottomOf="@+id/work_exp_item_tvPosition" />
 
@@ -56,11 +53,9 @@
         android:id="@+id/work_exp_item_tvPeriod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="3dp"
         android:text="Price"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/work_exp_item_imageView"
         app:layout_constraintTop_toBottomOf="@+id/work_exp_item_tvCompany" />
 
@@ -68,10 +63,9 @@
         android:id="@+id/work_exp_item_tvLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="2dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
         app:layout_constraintStart_toEndOf="@+id/work_exp_item_imageView"
         app:layout_constraintTop_toBottomOf="@+id/work_exp_item_tvPeriod" />
 
@@ -81,6 +75,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
+        android:textSize="14sp"
+        android:textAppearance="@style/CardView.Light"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.017"

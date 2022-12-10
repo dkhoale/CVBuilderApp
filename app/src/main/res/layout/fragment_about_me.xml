@@ -25,6 +25,12 @@
                 android:name="edu.miu.cvbuilderapp.EducationListFragment"
                 android:id="@+id/education_list_fm"/>
 
+            <androidx.fragment.app.FragmentContainerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="edu.miu.cvbuilderapp.CertificationListFragment"
+                android:id="@+id/certificate_list_fm"/>
+
         </LinearLayout>
     </ScrollView>
 
