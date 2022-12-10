@@ -38,4 +38,11 @@ Strong understanding of a variety of languages and tools such as Java, Spring, H
     <string name="my_contact_title">My Contact</string>
     <string name="education_title">Education</string>
     <string name="software_dev_title">Software Engineer</string>
+    <string name="career_note_title">Career Note</string>
+    <string name="core_competency_title">Core Competency</string>
+    <string name="home_tab_title">Home</string>
+    <string name="about_me_tab_title">About Me</string>
+    <string name="work_tab_title">Work</string>
+    <string name="contact_tab_title">Contact</string>
+    <string name="login_error_message">The username or password is invalid.</string>
 </resources>

@@ -39,19 +39,19 @@ class CVBuilderActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tlayout,binding.vpager){tab,position->
             when(position){
                 0->{
-                    tab.text="Home"
+                    tab.text= getString(R.string.home_tab_title)
                     tab.setIcon(R.drawable.home)
                 }
                 1->{
-                    tab.text="About Me"
+                    tab.text=getString(R.string.about_me_tab_title)
                     tab.setIcon(R.drawable.help)
                 }
                 2->{
-                    tab.text="Work"
+                    tab.text=getString(R.string.work_tab_title)
                     tab.setIcon(R.drawable.work)
                 }
                 3->{
-                    tab.text = "Contact"
+                    tab.text = getString(R.string.contact_tab_title)
                     tab.setIcon(R.drawable.contact)
                 }
             }

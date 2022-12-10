@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("currentLogin", currentUser)
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "The username or password is invalid.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login_error_message), Toast.LENGTH_SHORT).show()
             }
         }
     }
