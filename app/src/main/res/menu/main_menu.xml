@@ -10,4 +10,12 @@
         android:title="Github"
         android:icon="@drawable/github_icon"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/whatAppsMenu"
+        android:title="WhatApps"
+        app:showAsAction="withText|ifRoom"/>
+    <item
+        android:id="@+id/logoutMenu"
+        android:title="Logout"
+        app:showAsAction="withText|ifRoom"/>
 </menu>

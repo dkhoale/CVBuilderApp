@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import edu.miu.cvbuilderapp.databinding.ActivityMainBinding
-import com.google.gson.reflect.TypeToken
-import edu.miu.cvbuilderapp.adapter.LocalDateAdapter
 import edu.miu.cvbuilderapp.model.*
+import edu.miu.cvbuilderapp.util.GsonUtil
 import java.time.LocalDate
 
 
@@ -32,13 +30,12 @@ class MainActivity : AppCompatActivity() {
         val sharedPF = getSharedPreferences("login", MODE_PRIVATE)
         val credentialsJson = sharedPF.getString("credentials", "")
         if(credentialsJson!!.isBlank()) {
-            users.putIfAbsent("kevin.lee@gmail.com",User("Kevin", "Lee", "kevin.lee@gmail.com", "123456"))
-//            users.putIfAbsent("1",User("Kevin", "Lee", "1", "1"))
+            users.putIfAbsent("kevin.lee@gmail.com",User("Dang Khoa", "Le", "kevin.lee@gmail.com", "123456", R.drawable.profile))
             val sharedPFEdit = sharedPF.edit()
             sharedPFEdit.putString("credentials",Gson().toJson(users))
             sharedPFEdit.apply()
         }else {
-            users = fromJson<HashMap<String,User>>(credentialsJson)
+            users = GsonUtil.fromJson<HashMap<String,User>>(credentialsJson)
         }
 
         val curriculumSpf = getSharedPreferences("curriculums", MODE_PRIVATE)
@@ -56,10 +53,15 @@ class MainActivity : AppCompatActivity() {
             )
             val workExperiences = arrayListOf<WorkExperience>(
                 WorkExperience("Software Developer", CompanyMapping.VISA,
-                    LocalDate.of(2020,2,1), LocalDate.of(2022,9,1),"Texas, US", "Lead dev team to develop commercehub.")
+                    LocalDate.of(2020,2,1), LocalDate.of(2022,9,1),"TX, US", "Lead dev team to develop commercehub."),
+                WorkExperience("Data Engineer", CompanyMapping.IBM,
+                LocalDate.of(2011,1,1), LocalDate.of(2020,2,1),"IL, US", "Implement store procedures, ETL in Oracle Database.")
             )
             val contacts = arrayListOf(Contact("(641) 233 2385","Mobile",R.drawable.phone_icon),
-                Contact("ldkhoa83@gmail.com","Email",R.drawable.mail_icon)
+                Contact("ldkhoa83@gmail.com","Email",R.drawable.mail_icon),
+                Contact("https://www.linkedin.com/in/dang-khoa-le-dkl","LinkedIn Website",R.drawable.black_linkedin_icon),
+                Contact("https://github.com/dkhoale/CVBuilderApp","Github", R.drawable.black_github_icon),
+                Contact("Resume.pdf", "PDF", R.drawable.pdf_icon)
             )
             curriculums.putIfAbsent("kevin.lee@gmail.com",
                 Curriculum(getString(R.string.career_note_1),getString(R.string.core_competency_1),getString(R.string.about_me_1),
@@ -67,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                 )
             )
 
-            val curJson = toJson(curriculums)
+            val curJson = GsonUtil.toJson(curriculums)
             val spfe = curriculumSpf.edit()
             spfe.putString("curriculums",curJson)
             spfe.apply()
@@ -79,9 +81,9 @@ class MainActivity : AppCompatActivity() {
             val email = binding.edtEmailAddress.text.toString().trim()
             val password = binding.edtPassword.text.toString().trim()
             if (email.isNotEmpty() && password.isNotEmpty() && users.any { it.key == email && it.value.password == password}) {
-
+                val currentUser = users[email]
                 val intent = Intent(this, CVBuilderActivity::class.java)
-                intent.putExtra("currentLogin", email)
+                intent.putExtra("currentLogin", currentUser)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "The username or password is invalid.", Toast.LENGTH_SHORT).show()
@@ -89,7 +91,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    inline fun <reified T> fromJson(json: String) = Gson().fromJson<T>(json, object: TypeToken<T>() {}.type)
-    fun toJson(objectJson: Any): String = GsonBuilder().registerTypeAdapter(LocalDate::class.java,LocalDateAdapter())
-        .create().toJson(objectJson)
 }

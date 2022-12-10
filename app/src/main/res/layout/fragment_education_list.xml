@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_title"
-            android:text="Education"
+            android:text="@string/education_title"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
             android:id="@+id/eduFrmt_title_tv"/>
 

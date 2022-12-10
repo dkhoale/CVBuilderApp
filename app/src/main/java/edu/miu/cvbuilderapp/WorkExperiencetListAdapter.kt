@@ -1,5 +1,6 @@
 package edu.miu.cvbuilderapp
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,21 +12,23 @@ import kotlin.collections.ArrayList
 
 class WorkExperiencetListAdapter(val context: Context, private val workExps: ArrayList<WorkExperience>) : RecyclerView.Adapter<WorkExperiencetListAdapter.WorkExperienceListVH>(){
     private lateinit var binding: WorkItemViewBinding
+    private val dateFormatter = DateTimeFormatter.ofPattern("MMM yyyy")
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkExperienceListVH {
         binding = WorkItemViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return WorkExperienceListVH(binding)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: WorkExperienceListVH, position: Int) {
         holder.binding.workExpItemImageView.setImageResource(workExps[position].company.icon)
         holder.binding.workExpItemTvPosition.text = workExps[position].position
         holder.binding.workExpItemTvCompany.text = workExps[position].company.name
-        holder.binding.workExpItemTvPeriod.text = workExps[position].from.format(
-            DateTimeFormatter.ofPattern("MMM yyyy"))
+        holder.binding.workExpItemTvPeriod.text = "${workExps[position].from.format(
+            dateFormatter)} - ${workExps[position].to.format(
+            dateFormatter)}"
         holder.binding.workExpItemTvLocation.text = workExps[position].location
         holder.binding.workExpItemTvDescription.text = workExps[position].description
-
     }
 
     override fun getItemCount(): Int {

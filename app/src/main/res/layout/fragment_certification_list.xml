@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_title"
-        android:text="Certificate"
+        android:text="@string/certification_title"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
         android:id="@+id/certFrm_title_tv"/>
 

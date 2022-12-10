@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_title"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                android:text="My Contact"
+                android:text="@string/my_contact_title"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="15dp"/>
 

@@ -25,7 +25,17 @@ Strong understanding of a variety of languages and tools such as Java, Spring, H
     <string-array name="company_locations">
         <item>TX, USA</item>
         <item>CA, USA</item>
+        <item>IL, USA</item>
+        <item>IA, USA</item>
+        <item>FL, USA</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_in_title_label">Sign in to your account</string>
+    <string name="username_label">Email address (required)</string>
+    <string name="password_label">Password (required)</string>
+    <string name="certification_title">Certification</string>
+    <string name="my_contact_title">My Contact</string>
+    <string name="education_title">Education</string>
+    <string name="software_dev_title">Software Engineer</string>
 </resources>
