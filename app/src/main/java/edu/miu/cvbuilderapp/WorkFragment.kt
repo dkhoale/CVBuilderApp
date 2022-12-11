@@ -36,7 +36,11 @@ class WorkFragment(private val curriculum: Curriculum?,
                 FragmentResultListener {requestKey, result ->
                     when(requestKey){
                         "OK" -> {
-                            workExps.add(result.getSerializable("workExperience") as WorkExperience)
+                            val newWorks = arrayListOf<WorkExperience>(result.getSerializable("workExperience") as WorkExperience)
+                            newWorks.addAll(workExps)
+
+                            workExps.clear()
+                            workExps.addAll(newWorks)
                             binding.rcv.adapter?.notifyDataSetChanged()
 
                             curriculum.workExperiences = workExps
